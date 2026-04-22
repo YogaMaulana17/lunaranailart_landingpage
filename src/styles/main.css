@@ -1,0 +1,496 @@
+@import "./variables.css";
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #2b2b2b;
+}
+
+/* ===== NAVBAR BASE ===== */
+.custom-navbar {
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.custom-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 12px 0;
+}
+
+/* Brand */
+.brand-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2B2B2B;
+    font-display: swap;
+}
+
+.logo {
+    border-radius: 50%;
+}
+
+/* Nav link */
+.nav-link {
+    color: #2B2B2B;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+}
+
+/* Hover underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #CBA135;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Button */
+.btn-gold {
+    background: var(--gold);
+    color: var(--white);
+    border-radius: 999px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.btn-gold:hover {
+    background: var(--gold);
+}
+
+/* ===== HERO ===== */
+.hero-hybrid {
+    position: relative;
+    padding: 140px 0 80px;
+
+    background: url("../assets/img/heroBg.webp") center/cover no-repeat;
+}
+
+/* overlay biar soft */
+.hero-hybrid .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: block;
+}
+
+/* content */
+.hero-hybrid .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* TEXT */
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text);
+
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    position: relative;
+}
+
+.hero-text h1 span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 8px;
+    background: rgba(203, 161, 53, 0.2);
+    z-index: -1;
+}
+
+.highlight {
+    color: var(--gold);
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-light);
+    max-width: 500px;
+}
+
+.image-card {
+    position: relative;
+    background: white;
+    padding: 12px;
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 2px 10px rgba(0, 0, 0, 0.05);
+
+    transform: rotate(2deg);
+    transition: all 0.4s ease;
+}
+
+/* hover effect */
+.image-card:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+/* gambar */
+.image-card img {
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+}
+
+.image-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #f8d7da, #fff);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .hero-hybrid {
+        text-align: center;
+        padding: 120px 0 60px;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+}
+
+/* ===== SERVICES ===== */
+.services {
+    min-height: 400px;
+    padding: 80px 0;
+    background: var(--white);
+}
+
+/* Header */
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+/* Card */
+.service-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: var(--radius-md);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+
+    height: 100%;
+}
+
+/* Hover */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon */
+.service-icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Title */
+.service-card h5 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Desc */
+.service-card p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    border-radius: 50%;
+
+    font-size: 24px;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+    padding: 80px 0;
+    background: var(--primary);
+}
+
+/* Header */
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+/* Item */
+.gallery-item {
+    overflow: hidden;
+    transition: all 0.4s ease;
+    aspect-ratio: 1/1;
+}
+
+/* Image */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Hover effect (very subtle) */
+.gallery-item:hover {
+    transform: translateY(-4px);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== PRICING ===== */
+.pricing {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+/* Card */
+.price-card {
+    position: relative;
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+
+    text-align: center;
+}
+
+/* Hover */
+.price-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Highlight card */
+.price-card.active {
+    border: 2px solid var(--gold);
+    transform: scale(1.05);
+}
+
+/* Badge */
+.price-card .badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: var(--gold);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+/* Title */
+.price-card h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Price */
+.price-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Features */
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.price-card ul li {
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+/* Button */
+.price-card .btn {
+    border-radius: 999px;
+}
+
+/* ===== CTA ===== */
+.cta {
+    padding: 80px 0;
+    background: var(--primary);
+}
+
+/* Box */
+.cta-box {
+    background: var(--white);
+    padding: 60px 40px;
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-soft);
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Title */
+.cta-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+/* Text */
+.cta-box p {
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+/* Button */
+.cta-box .btn {
+    padding: 12px 28px;
+    font-size: 16px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    padding: 60px 0 20px;
+    background: var(--white);
+    border-top: 1px solid #eee;
+}
+
+/* Brand */
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Text */
+.footer p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* Title */
+.footer h6 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Links */
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+.footer ul a:hover {
+    color: var(--gold);
+}
+
+/* Bottom */
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+}
+
+.socials {
+    margin-top: 10px;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--text);
+
+    font-size: 18px;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+/* hover */
+.socials a:hover {
+    background: var(--gold);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+a:focus,
+button:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
